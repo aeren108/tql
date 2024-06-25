@@ -1,0 +1,20 @@
+let k=@["test.txt"];
+let a=k[string id, string name],
+	b="Control",
+	c="",
+	d=@["test2.txt"][string k, string l];
+	
+let rowset=a / ($id==b && $name==b+"Test") ;
+
+let m=0;
+while (m<5)
+{
+   let merged=a*d;
+   let i=0;
+   m=m+(1+(m+(m+(m+m))));
+   
+   if (int(m/2)*2!=m)
+   {
+      //rowset->
+   }
+}

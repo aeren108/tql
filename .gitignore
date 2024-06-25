@@ -1,0 +1,11 @@
+genparser.sh
+lex.yy.cc
+stack.hh
+tqlast.json
+tqlbisonreport.txt
+tqlir.txt
+tqlp
+tqlparse.tab.cc
+tqlparse.tab.hh
+
+.vscode/

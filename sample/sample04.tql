@@ -1,0 +1,11 @@
+let x = 5;
+let t1 = @["deneme.txt"][number id, string title];
+t1[string title, number id];
+let c = 156;
+
+if (x > 5)
+{
+    let a = 16;
+    let t3 = @["t.txt"][number id];
+    let b = num2str(a);
+}

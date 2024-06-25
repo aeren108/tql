@@ -1,0 +1,29 @@
+remove("output.txt");
+
+a-b;
+
+let b=@["grades.txt"][string studentId, string courseId, number grade],
+    output=@["output.txt"][number tableNo, string description],
+    k=0;
+    
+let i=1;
+
+while (i<=10)
+{
+   let t=b / ($courseId==100+i);
+   
+   t->("t"+i+".txt");
+   
+   let r=rowcount(t);
+   append output, i, "Processed " + t + "lines";
+
+   if (r>0)
+   {
+      let s=sum(t, "grade");
+      
+      if (s/n>=50)
+         append output, i, "Successful!";
+   }
+   
+   i=i+1;   
+}

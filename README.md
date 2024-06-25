@@ -1,7 +1,21 @@
 # Text Query Language (TQL)
 
-**CENG 444 - Language Processors**
-**Project II - Intermediate Representation**
+## Prerequisites
+
+- Flex
+- Bison
+
+## How To Build
+
+Run  `make` in the project folder. It will produce the compiler executable named as `tqlp`.
+
+## How to Compile a TQL Code
+
+`tqlp <path/to/tql-source-file.tql>`
+
+
+# CENG 444 - Language Processors 
+
 *Due date: 31 May 2024, Friday, 23.59*
 
 ## Problem Definition
@@ -209,29 +223,29 @@ Table [5 ](#_page7_x273.72_y720.81)lists the operators that will be available. F
 |OP|Short Name|Form|Application|Result Type|Assoc.|Prec.|
 | - | - | - | - | - | - | - |
 |,|Comma|Binary|Multi|LR|0|
-|=|Assign|Binary, infix|id=<expression>|Type of <expression>|RL|1|
-|&&|Boolean AND|Binary, infix|<boolean> && <boolean>|<boolean>|LR|2|
-| II |Boolean OR|Binary, infix|<boolean> II <boolean>|<boolean>|LR|2|
-|==|Equal|Binary, infix|<type1> == <type2>|<boolean>|LR|3|
-|!=|Not equal|Binary, infix|<type1> != <type2>|<boolean>|LR|3|
-|<|Less than|Binary, infix|<type1> < <type2>|<boolean>|LR|3|
-|>|Greater than|Binary, infix|<type1> > <type2>|<boolean>|LR|3|
-|<=|Less than or equal|Binary, infix|<type1> <= <type2>|<boolean>|LR|3|
-|>=|Greater than or equal|Binary, infix|<type1> >= <type2>|<boolean>|LR|3|
-|+|Add|Binary, infix|<number> + <number>|<number>|LR|4|
-|+|Concatenate|Binary, infix|<string> + <string>|<string>|LR|4|
-|+|Concatenate|Binary, infix|<string> + <number>|<string>|LR|4|
-|+|Merge|Binary, infix|<table > + <table |<table>|LR|4|
-|-|Subtract|Binary, infix|<number> - <number>|<number>|LR|4|
-| * |Multiply|Binary, infix|<number> \* <number>|<number>|LR|5|
-| * |Cross product|Binary, infix|<table> \* <table>|<table>|LR|5|
-|/|Divide|Binary, infix|<number> / <number>|<number>|LR|5|
-|/|Select|Binary, infix|<table> / <boolean>|<table>|LR|5|
-|->|Materialize|Binary, infix|<table> / <string>|<number>|LR|5|
-|-|Negate|Unary, prefix|-<number>|<number>|RL|6|
-|!|Boolean negate|Unary, prefix|!<boolean>|<boolean>|RL|6|
-|()|Call function|n-ary, postfix|id(<expression-list>)|Return type of function|LR|7|
-|[]|Mutate|n-ary, postfix|<table>[column-list]|<table>|LR|7|
+|=|Assign|Binary, infix|id=\<expression>|Type of \<expression>|RL|1|
+|&&|Boolean AND|Binary, infix|\<boolean> && \<boolean>|\<boolean>|LR|2|
+| II |Boolean OR|Binary, infix|\<boolean> II \<boolean>|\<boolean>|LR|2|
+|==|Equal|Binary, infix|\<type1> == \<type2>|\<boolean>|LR|3|
+|!=|Not equal|Binary, infix|\<type1> != \<type2>|\<boolean>|LR|3|
+|<|Less than|Binary, infix|\<type1> < \<type2>|\<boolean>|LR|3|
+|>|Greater than|Binary, infix|\<type1> > \<type2>|\<boolean>|LR|3|
+|<=|Less than or equal|Binary, infix|\<type1> <= \<type2>|\<boolean>|LR|3|
+|>=|Greater than or equal|Binary, infix|\<type1> >= \<type2>|\<boolean>|LR|3|
+|+|Add|Bina\ry, infix|\<number> + \<number>|\<number>|LR|4|
+|+|Concatenate|Binary, infix|\<string> + \<string>|\<string>|LR|4|
+|+|Concatenate|Binary, infix|\<string> + \<number>|\<string>|LR|4|
+|+|Merge|Binary, infix|table  + table |table|LR|4|
+|-|Subtract|Binary, infix|\<number> - \<number>|\<number>|LR|4|
+| * |Multiply|Binary, infix|\<number> \* \<number>|\<number>|LR|5|
+| * |Cross product|Binary, infix|table \* table|table|LR|5|
+|/|Divide|Binary, infix|\<number> / \<number>|\<number>|LR|5|
+|/|Select|Binary, infix|table / \<boolean>|table|LR|5|
+|->|Materialize|Binary, infix|table / \<string>|\<number>|LR|5|
+|-|Negate|Unary, prefix|-\<number>|\<number>|RL|6|
+|!|Boolean negate|Unary, prefix|!\<boolean>|\<boolean>|RL|6|
+|()|Call function|n-ary, postfix|id(\<expression-list>)|Return type of function|LR|7|
+|[]|Mutate|n-ary, postfix|table[column-list]|table|LR|7|
 
 Table 5:<a name="_page7_x273.72_y720.81"></a> Operators available in TQL
 

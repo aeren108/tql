@@ -9,3 +9,4 @@ tqlparse.tab.cc
 tqlparse.tab.hh
 
 .vscode/
+.DS_Store

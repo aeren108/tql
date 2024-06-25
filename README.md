@@ -4,7 +4,7 @@
 **Project II - Intermediate Representation**
 *Due date: 31 May 2024, Friday, 23.59*
 
-## Problem Definition
+## Problem Definition
 
 In this assignment, you are required to write a C++ program that performs the following by accepting source codes written in the fictitious programming language Text Query Language (TQL):
 
@@ -20,7 +20,7 @@ The syntactic structure and semantics of a TQL program are slightly different fr
 - Expression lists and the comma operator: The comma operator is introduced to change the way of building up the expression lists. See the appendix for the updated list of the operators.
 - Definition of runtime functions and intrinsic functions: The “intrinsic functions” are changed to “runtime functions”. Intrinsic functions are defined as the functions that act behind the scenes to implement operators. See the relevant appendix for details.
 
-## Processor Output
+## Processor Output
 
 The language processor you develop will generate an improved JSON file that delivers the three main components (the graphical IR, the linear IR, and the list of messages) given in the introduction to the problem. Additionally, it will generate a text file to present the linear IR in a more readable format.
 
@@ -166,13 +166,13 @@ Table 4:<a name="_page6_x274.29_y169.35"></a> Valid number combinations
 
   The second kind is prefixed with $ sign. The $ prefixed identifiers are special and only valid when referred in the expressions that are the second operand of an operator that takes a table as the first operator, which are select and mutate . $<positive integer>.<field name> is the form to use in mutate and $<field name> is the form for the select operator.
 
-- mutate example
+- Mutate example
 
   Temp=Students\*Courses[number $1.studentId, number $5.courseId]
 
   The cross product of Students and Courses is calculated resulting in several fields by the \* operator. Then the mutation is performed to reduce and rename the column names. The result is assigned to Tempvariable.
 
-- select example
+- Select example
 
   Temp/($studentId=100 && ( $courseId>=100 || &courseId<200))
 
@@ -208,11 +208,10 @@ Table [5 ](#_page7_x273.72_y720.81)lists the operators that will be available. F
 
 |OP|Short Name|Form|Application|Result Type|Assoc.|Prec.|
 | - | - | - | - | - | - | - |
-|,|Comma|Binary||Multi|LR|0|
-| - | - | - | :- | - | - | - |
+|,|Comma|Binary|Multi|LR|0|
 |=|Assign|Binary, infix|id=<expression>|Type of <expression>|RL|1|
 |&&|Boolean AND|Binary, infix|<boolean> && <boolean>|<boolean>|LR|2|
-||||Boolean OR|Binary, infix|<boolean> || <boolean>|<boolean>|LR|2|
+| II |Boolean OR|Binary, infix|<boolean> II <boolean>|<boolean>|LR|2|
 |==|Equal|Binary, infix|<type1> == <type2>|<boolean>|LR|3|
 |!=|Not equal|Binary, infix|<type1> != <type2>|<boolean>|LR|3|
 |<|Less than|Binary, infix|<type1> < <type2>|<boolean>|LR|3|
@@ -222,10 +221,10 @@ Table [5 ](#_page7_x273.72_y720.81)lists the operators that will be available. F
 |+|Add|Binary, infix|<number> + <number>|<number>|LR|4|
 |+|Concatenate|Binary, infix|<string> + <string>|<string>|LR|4|
 |+|Concatenate|Binary, infix|<string> + <number>|<string>|LR|4|
-|+|Merge|Binary, infix|<table> + <table>|<table>|LR|4|
+|+|Merge|Binary, infix|<table > + <table |<table>|LR|4|
 |-|Subtract|Binary, infix|<number> - <number>|<number>|LR|4|
-|\*|Multiply|Binary, infix|<number> \* <number>|<number>|LR|5|
-|\*|Cross product|Binary, infix|<table> \* <table>|<table>|LR|5|
+| * |Multiply|Binary, infix|<number> \* <number>|<number>|LR|5|
+| * |Cross product|Binary, infix|<table> \* <table>|<table>|LR|5|
 |/|Divide|Binary, infix|<number> / <number>|<number>|LR|5|
 |/|Select|Binary, infix|<table> / <boolean>|<table>|LR|5|
 |->|Materialize|Binary, infix|<table> / <string>|<number>|LR|5|
